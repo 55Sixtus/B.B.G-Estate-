@@ -28,7 +28,7 @@ function AppContent() {
     <div
       className={`min-h-screen flex flex-col font-sans relative transition-colors duration-300 ${
         theme === 'light'
-          ? 'bg-[#FAF9F5] text-neutral-900 selection:bg-[#123D2B] selection:text-[#D0AD55]'
+          ? 'bg-[#F5F5F0] text-neutral-950 selection:bg-[#123D2B] selection:text-[#D0AD55]'
           : 'bg-[#0E1612] text-[#F5F5F0] selection:bg-[#123D2B] selection:text-[#D0AD55]'
       }`}
     >

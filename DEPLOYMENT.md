@@ -1,75 +1,44 @@
 # Deployment Guide - Bashir Building Green Estates (B.G.E.)
 
-This document provides complete instructions for building and deploying the B.G.E. real estate website to Netlify or any modern static/JAMstack hosting provider.
+This document provides instructions for deploying the B.G.E. real estate website to **Vercel** or **Netlify**.
 
 ---
 
-## 1. Prerequisites & Installation
+## 1. Local Development & Production Build
 
-- **Node.js**: Version 18.x or higher recommended.
-- **Package Manager**: npm (or yarn / bun).
-
-To install dependencies locally:
-```bash
-npm install
-```
+- **Install dependencies**: `npm install`
+- **Run dev server**: `npm run dev`
+- **Production build**: `npm run build` (outputs to `/dist`)
 
 ---
 
-## 2. Local Development
+## 2. Deploying to Vercel (Recommended)
 
-To start the local development server on port 3000:
-```bash
-npm run dev
-```
-Open `http://localhost:3000` in your browser.
+This project includes a `vercel.json` configuration for seamless SPA client-side routing.
 
----
-
-## 3. Production Build
-
-To create an optimized production build:
-```bash
-npm run build
-```
-The compiled output will be generated in the `/dist` directory.
+1. Push your code to GitHub / GitLab / Bitbucket.
+2. Import the project into **Vercel** (`vercel.com`).
+3. Vercel automatically detects Vite. Verify the build settings:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Click **Deploy**.
 
 ---
 
-## 4. Netlify Deployment Settings
+## 3. Deploying to Netlify
 
-When deploying this project on Netlify, configure the following site settings:
+This project includes a `public/_redirects` configuration for Netlify SPA routing.
 
-- **Build command**: `npm run build`
-- **Publish directory**: `dist`
-- **Node version**: `18` or `20` (configured via Netlify environment or site settings if needed)
-
-### SPA Routing Fallback
-Client-side routing is handled via `public/_redirects`, which contains:
-```text
-/*    /index.html   200
-```
-This ensures direct URL navigation and page refreshes work correctly without 404 errors.
+1. Import the project into **Netlify** (`netlify.com`).
+2. Configure site settings:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+3. Click **Deploy**.
 
 ---
 
-## 5. Environment Variables
+## 4. Official Contact & Developer Credit
 
-This application is primarily a static frontend client with WhatsApp direct handoffs and verified contact integrations. 
-If Gemini AI features or server-side endpoints are used, set the following environment variable in your Netlify Site Settings (`Settings > Build & deploy > Environment`):
-
-- `GEMINI_API_KEY`: Required only if AI valuation / smart assistant features are enabled.
-
-No sensitive credentials or private keys are exposed in client-side bundles.
-
----
-
-## 6. Official Contact & Domain Configuration
-
-- **Official Website URL**: Configure your custom production domain (e.g., `https://bgepropertyholding.com` or `https://mandamis.com`) in Netlify domain settings.
-- **Primary Contact**: 
-  - Phone: `+234 811 295 8241`
-  - WhatsApp: `https://wa.me/2348112958241`
-  - Email: `bgepropertyholding@gmail.com`
-  - Instagram: `@bashir_bge`
-  - Facebook: `BGE Property Holding`
+- **Developer Credit**: Sixtus Tech Hub | 08130678052
+- **Primary Contact**: +234 811 295 8241 | bgepropertyholding@gmail.com

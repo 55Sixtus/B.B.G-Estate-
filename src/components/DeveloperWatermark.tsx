@@ -1,34 +1,47 @@
 import React from 'react';
-import { Code2, Phone, Sparkles } from 'lucide-react';
+import { useBge } from '../context/BgeContext';
+import { Code2, Phone, Sun, Moon } from 'lucide-react';
 
 export const DeveloperWatermark: React.FC = () => {
-  return (
-    <div className="fixed bottom-4 left-4 z-50 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-[#123D2B] via-[#080D0B] to-[#123D2B] text-[#F5F5F0] border-2 border-[#D0AD55] shadow-2xl text-xs font-semibold tracking-wide animate-in fade-in slide-in-from-bottom-3 duration-500">
-      <span className="relative flex h-3 w-3 shrink-0">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-[#25D366]"></span>
-      </span>
+  const { theme, toggleTheme } = useBge();
 
-      <div className="flex items-center gap-2">
-        <Code2 className="w-4 h-4 text-[#D0AD55]" />
-        <div>
-          <span className="block text-[10px] uppercase tracking-widest text-[#D0AD55] font-bold">
-            Official Developer Watermark
-          </span>
-          <span className="text-xs font-bold text-[#F5F5F0]">
-            Sixtus Tech Hub <span className="text-[#D0AD55]">|</span> 08130678052
-          </span>
-        </div>
+  return (
+    <div className="fixed md:bottom-6 md:left-6 top-24 left-4 md:top-auto z-40 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-[#080D0B] via-[#123D2B] to-[#080D0B] text-[#F5F5F0] border-2 border-[#D0AD55] shadow-2xl text-xs font-semibold tracking-wide backdrop-blur-md animate-in fade-in duration-500 hover:border-amber-400 transition-all">
+      <div className="w-8 h-8 rounded-xl bg-[#123D2B] border border-[#D0AD55]/40 flex items-center justify-center text-[#D0AD55] shrink-0 shadow-inner">
+        <Code2 className="w-4 h-4" />
       </div>
 
-      <a
-        href="tel:08130678052"
-        className="ml-2 px-2.5 py-1 rounded-lg bg-[#D0AD55] hover:bg-[#e2bd64] text-[#080D0B] text-[11px] font-bold transition-colors flex items-center gap-1 shadow-md"
-        title="Contact Developer Sixtus Tech Hub"
-      >
-        <Phone className="w-3 h-3" />
-        <span>Call</span>
-      </a>
+      <div className="flex flex-col">
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+          <span className="text-[9px] uppercase tracking-widest text-[#D0AD55] font-bold">
+            Verified Developer
+          </span>
+        </div>
+        <span className="text-xs font-extrabold text-[#F5F5F0] tracking-tight">
+          Sixtus Tech Hub <span className="text-[#D0AD55]">|</span> 08130678052
+        </span>
+      </div>
+
+      <div className="flex items-center gap-2 ml-2 pl-2 border-l border-white/10">
+        <a
+          href="tel:08130678052"
+          className="px-2.5 py-1.5 rounded-xl bg-[#D0AD55] hover:bg-[#e2bd64] text-[#080D0B] text-xs font-bold transition-colors flex items-center gap-1 shadow-md shrink-0"
+          title="Call Developer Sixtus Tech Hub"
+        >
+          <Phone className="w-3 h-3" />
+          <span className="hidden sm:inline">Call</span>
+        </a>
+
+        <button
+          onClick={toggleTheme}
+          className="p-1.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-amber-400 transition-colors flex items-center gap-1"
+          title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+          aria-label="Toggle Light and Dark Mode"
+        >
+          {theme === 'light' ? <Moon className="w-3.5 h-3.5" /> : <Sun className="w-3.5 h-3.5" />}
+        </button>
+      </div>
     </div>
   );
 };

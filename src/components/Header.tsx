@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
   return (
     <header className={`sticky top-0 z-40 w-full backdrop-blur-md border-b transition-colors ${
       theme === 'light' 
-        ? 'bg-white/90 border-neutral-200 text-neutral-900' 
+        ? 'bg-[#F5F5F0]/95 border-neutral-300 text-neutral-950' 
         : 'bg-neutral-950/90 border-neutral-900 text-neutral-100'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
