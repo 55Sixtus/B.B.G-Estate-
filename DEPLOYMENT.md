@@ -14,7 +14,7 @@ This document provides instructions for deploying the B.G.E. real estate website
 
 ## 2. Deploying to Vercel (Recommended)
 
-This project includes a `vercel.json` configuration for seamless SPA client-side routing.
+This project includes a `vercel.json` configuration for seamless SPA client-side routing and a `.npmrc` file to automatically resolve npm peer dependency conflicts (`esbuild` / `vite`).
 
 1. Push your code to GitHub / GitLab / Bitbucket.
 2. Import the project into **Vercel** (`vercel.com`).
